@@ -6,6 +6,8 @@
 
         public string Nome { get; set; }
 
+        public string FotoUsuario { get; set; }
+
         public IFormFile Imagem { get; set; }
     }
 }

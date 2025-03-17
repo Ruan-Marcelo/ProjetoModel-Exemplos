@@ -58,9 +58,19 @@ namespace ProjtModel.Controllers
             {
                 o_UsuarioVM.Imagem.CopyTo(stream);
             }
-
-
+       
             return Ok("Upload de imagem efetuada com sucesso!");
+        }
+
+        public IActionResult ExibirUsuario()
+        {
+            UsuarioViewModel o_UsuarioVM = new UsuarioViewModel();
+
+            o_UsuarioVM.IdUsuario = 69;
+            o_UsuarioVM.Nome = "Lucas Borges Silva";
+            o_UsuarioVM.FotoUsuario = $"Usuario/{o_UsuarioVM.IdUsuario}.jfif";
+
+            return View("ExibirUsuarioView", o_UsuarioVM);
         }
 
     }
