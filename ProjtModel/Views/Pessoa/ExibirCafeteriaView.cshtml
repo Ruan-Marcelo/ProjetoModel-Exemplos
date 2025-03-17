@@ -1,0 +1,33 @@
+﻿@model List<ProjtModel.Models.CafeteriaViewModel>;
+
+@{
+    ViewData["Title"] = "ExibirCafeteriaView";
+}
+
+<h1>Exibir Cafeteria View</h1>
+
+<table class="table">
+    <thead>
+        <tr class="table-primary">
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Preço</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach (CafeteriaViewModel item in Model)
+        {       
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Nome</td>
+            <td>@item.Descricao</td>
+            <td>R$@item.Preco</td>
+        </tr>
+        }
+        }
+    </tbody>
+ </table>
+
+

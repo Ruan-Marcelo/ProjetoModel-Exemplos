@@ -1,0 +1,67 @@
+﻿@using System.Data
+@model ProjtModel.Models.CursoViewModel
+@{
+    ViewData["Title"] = "ExibirCursoView";
+}
+
+<h1>Exibir Curso</h1>
+
+<p><strong>ID Curso: </strong>@Model.IdCurso</p>
+<p><strong>Nome Curso: </strong>@Model.Curso</p>
+
+
+<table class="table">
+
+    <thead>
+        <tr class="table-dark">
+            <th>ID</th>
+            <th>Disciplina</th>
+            <th>Professor</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @if (Model != null)
+        {
+            @foreach (DataRow row in Model.Disciplinas.Rows)
+            {
+                <tr>
+                    @{
+                    int idDisciplina;
+
+                    idDisciplina = int.Parse(row["IdDisciplina"].ToString());
+                }
+                 
+                 
+                    @if(idDisciplina < 20)
+                    {
+                        <td class="table-danger ">@idDisciplina</td>
+                    }
+                    else if(idDisciplina == 20)
+                    {
+                        <td class="table-success ">@idDisciplina</td>
+                    }
+                    else
+                    {
+                        <td class="table-dark fw-bold">@idDisciplina</td>
+                    }
+
+
+                <td>@row["NomeDisciplina"]</td>
+
+                    @if(row["Professor"].ToString() == "Lucas")
+                    {
+                        <td class="table-dark fw-bold text-success">@row["Professor"]</td>
+                    }
+                    else
+                    {
+                         <td class="table-danger ">@row["Professor"]</td>
+                    }
+                   
+            </tr>   
+            }
+        }
+    </tbody>
+
+</table>

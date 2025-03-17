@@ -1,0 +1,33 @@
+﻿@model ProjtModel.Models.UsuarioViewModel
+
+@{
+    ViewData["Title"] = "ExibirImagemView";
+}
+
+<h1>Imagem Upload</h1>
+<form asp-controller="Usuario" asp-action="ProcessarImagem" enctype="multipart/form-data">
+
+
+    ID Usúario <input type="number" size="6" maxlength="6" asp-for="IdUsuario" placeholder="ID Usúario">
+    <br/><br/>
+
+    Nome <input type="text" size="50" asp-for="Nome" placeholder="Nome">
+    <br/>
+
+
+    <div class="row-mt2">
+        <div>
+            @*//type="file"*@
+            Imagem <input asp-for="Imagem" class="form-control">
+        </div>
+    </div>
+
+    <br/>
+    <button type="submit" class="btn btn-dark">Enviar</button>
+
+</form>
+
+
+
+
+
