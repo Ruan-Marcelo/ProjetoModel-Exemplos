@@ -59,7 +59,7 @@ namespace ProjtModel.Controllers
                 o_UsuarioVM.Imagem.CopyTo(stream);
             }
        
-            return Ok("Upload de imagem efetuada com sucesso!");
+            return Redirect("ExibirUsuario");
         }
 
         public IActionResult ExibirUsuario()
