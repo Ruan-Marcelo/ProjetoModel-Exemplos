@@ -18,7 +18,11 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Usuario}/{action=ExibirImagem}");
+    pattern: "{controller=Inscricao}/{action=ExibirInscricao}");
+
+//app.MapControllerRoute(
+//    name: "default",
+//    pattern: "{controller=Usuario}/{action=ExibirImagem}");
 
 
 //app.MapControllerRoute(

@@ -1,0 +1,44 @@
+﻿@model ProjtModel.Models.InscricaoViewModel
+
+@{
+    ViewData["Title"] = "ExibirInscricaoView";
+}
+
+<h1>Exibir Inscricao View</h1>
+
+<form asp-action="ProcessarInscricao" asp-controller="Inscricao">
+
+
+    Nome <input type="text" asp-for="Nome" placeholder="Nome" />
+    <br /> <br />
+
+    <select class="" asp-for="EstadoCivil" arial-label="Default select example">
+        <option selected>Estado Civil</option>
+        <option value="Sol">Solteiro(a)</option>
+        <option value="Cas">Casado(a)</option>
+        <option value="Div">Divorciado(a)</option>
+        <option value="Viu">Viúvo(a)</option>
+    </select>
+    <br /> <br />
+
+    Formação: &ensp;<br /> <br />
+
+    <input class="form-check-input" type="checkbox" asp-for="@Model.EnsinoFundamental" &ensp; /> Ensino Fundamental
+
+    <input class="form-check-input" type="checkbox" asp-for="@Model.EnsinoMedio" &ensp; /> Ensino Médio
+
+    <input class="form-check-input" type="checkbox" asp-for="@Model.EnsinoSuperior" &ensp; /> Ensino Superior
+    <br /> <br />
+
+    Tipo Sanguíneo <br /> <br />
+
+    <input class="form-check-input" type="radio" asp-for="TipoSanguineo" value="A" checked /> Tipo A &ensp;
+
+    <input class="form-check-input" type="radio" asp-for="TipoSanguineo" value="B" /> Tipo B &ensp;
+
+    <input class="form-check-input" type="radio" asp-for="TipoSanguineo" value="AB" /> Tipo AB &ensp;
+
+    <input class="form-check-input" type="radio" asp-for="TipoSanguineo" value="O" /> Tipo O &ensp;
+
+</form>
+
