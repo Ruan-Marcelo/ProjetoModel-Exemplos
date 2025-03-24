@@ -8,6 +8,7 @@
 
         public string FotoUsuario { get; set; }
 
+
         public IFormFile Imagem { get; set; }
     }
 }
