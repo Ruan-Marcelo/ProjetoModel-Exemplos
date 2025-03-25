@@ -6,6 +6,40 @@
 
 <h1>Cadastro de Produto</h1>
 
+@if (TempData["MsgSucesso"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["MsgSucesso"]
+        <button type="button"
+            class="fechar-alert btn btn-success btn-sm"
+            arial-label="Close">
+            X
+        </button>
+    </div>
+
+}
+@*else
+{
+    <div class="alert alert-danger" role="alert">
+        A simple danger alert—check it out!
+    </div>
+}*@
+
+@if (TempData["MsgErro"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @TempData["MsgErro"]
+        <button type="button"
+            class="fechar-alert btn btn-danger btn-sm"
+            arial-label="Close">
+            X
+        </button>
+    </div>
+
+}
+
+
+
 <form asp-controller="Produto" asp-action="ProcessarProduto" method="post">
 
     <p>
@@ -18,11 +52,11 @@
     </p>
 
     <p>
-        Preço: <input type="number" asp-for="Preco" step="0.5"/>
+        Preço: <input type="number" asp-for="Preco" step="0.5" />
         <span asp-validation-for="Preco" class="text-danger"></span>
     </p>
 
-     <p>
+    <p>
         Observação: <input type="text" asp-for="Observacao" />
     </p>
 

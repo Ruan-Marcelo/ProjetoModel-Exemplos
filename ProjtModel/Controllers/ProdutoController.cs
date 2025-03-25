@@ -22,18 +22,22 @@ namespace ProjtModel.Controllers
                 {
                     return View("ExibirProdutoView", o_ProdutoVM);
                 }
+                //--------------------------------------
+                //Regras de negócio do sistema (Aqui)  |
+                //--------------------------------------
 
-                //Regras de negócio do sistema
-                return Ok("Fim");
+                //Simulação de erro
+                //throw new Exception("Ocorreu um erro no banco de dados.");
+
+
+                TempData["MsgSucesso"] = "Produto cadastrado com sucesso!";
+                return RedirectToAction("ExibirProduto");
             }
             catch (Exception ex)
             {
-                return Ok("Ocorreu um erro.");
+                TempData["MsgErro"] = $"Erro: {ex.Message}!";
+                return View("ExibirProdutoView", o_ProdutoVM);
             }
-
-
-
-            return Ok("Fim");
         }
     }
 }
