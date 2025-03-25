@@ -1,0 +1,33 @@
+﻿@model ProjtModel.Models.ProdutoViewModel
+
+@{
+    ViewData["Title"] = "ExibirProdutoView";
+}
+
+<h1>Cadastro de Produto</h1>
+
+<form asp-controller="Produto" asp-action="ProcessarProduto" method="post">
+
+    <p>
+        IdProduto: <input type="number" asp-for="IdProduto" step="1" />
+    </p>
+
+    <p>
+        Nome: <input type="text" asp-for="Nome" />
+        <span asp-validation-for="Nome" class="text-danger"></span>
+    </p>
+
+    <p>
+        Preço: <input type="number" asp-for="Preco" step="0.5"/>
+        <span asp-validation-for="Preco" class="text-danger"></span>
+    </p>
+
+     <p>
+        Observação: <input type="text" asp-for="Observacao" />
+    </p>
+
+    <button type="submit">Enviar</button>
+
+
+</form>
+
