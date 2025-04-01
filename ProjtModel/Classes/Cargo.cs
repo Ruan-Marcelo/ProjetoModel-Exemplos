@@ -33,9 +33,5 @@ namespace ProjtModel.Classes
 
             return tabCargo;
         }
-
-
-
-
     }
 }
