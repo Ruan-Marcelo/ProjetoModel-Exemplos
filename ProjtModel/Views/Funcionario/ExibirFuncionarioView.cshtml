@@ -1,0 +1,29 @@
+﻿@model ProjtModel.Models.FuncionarioViewModel
+
+@{
+    ViewData["Title"] = "ExibirFuncionarioView";
+}
+
+<h1>Exibir Funcionario</h1>
+
+<form asp-controller="Funcionario" asp-action="ProcessarFuncionario" method="post">
+
+    <div class="row">
+
+        <div class="col-md-6">
+            Nome <input type="text" asp-for="Nome">
+        </div>
+    </div>
+    <br />
+
+    <div class="row">
+        <div class="col-md-6">
+            Cargo <select asp-for="IdCargo" asp-items="Model.ListaCargos"></select>
+        </div>
+    </div>
+    <br />
+
+    <button type="submit" class="btn btn-primary">Salvar</button>
+</form>
+
+
